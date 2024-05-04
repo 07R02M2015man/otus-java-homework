@@ -8,25 +8,8 @@ public class Box {
     private int length;
     private int height;
     private String color;
-    private String status;
-
+    private boolean isOpened;
     private String thing;
-
-    public void setColor(String color) {
-        this.color = color;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    public void setThing(String status) {
-        this.status = thing;
-    }
-
-    public String getColor() {
-        return color;
-    }
 
     public int getWidth() {
         return width;
@@ -40,21 +23,38 @@ public class Box {
         return height;
     }
 
-    public String getStatus() {
-        return status;
+    public String getColor() {
+        return color;
     }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public boolean isOpened() {
+        return isOpened;
+    }
+
+    public void setOpened(boolean opened) {
+        isOpened = opened;
+    }
+
 
     public String getThing() {
         return thing;
     }
 
-    public Box(String name, int width, int length, int height, String color, String status, String thing) {
+    public void setThing(String status) {
+        this.thing = thing;
+    }
+
+    public Box(String name, int width, int length, int height, String color, boolean isOpened, String thing) {
         this.name = name;
         this.width = width;
         this.height = height;
         this.length = length;
         this.color = color;
-        this.status = status;
+        this.isOpened = isOpened;
         this.thing = thing;
     }
 
@@ -62,7 +62,11 @@ public class Box {
         System.out.println("Коробка: " + name);
         System.out.println("Размеры коробки: ширина " + width + "см, длина " + length + "см, высота " + height + "см");
         System.out.println("Цвет: " + color);
-        System.out.println("Состояние: " + status);
+        if (isOpened()) {
+            System.out.println("Коробка открыта");
+        } else {
+            System.out.println("Коробка закрыта");
+        }
         if (thing.isEmpty()) {
             System.out.println("Коробка пустая");
         } else {
@@ -70,27 +74,57 @@ public class Box {
         }
     }
 
-    public void putSting() {
-
-    }
-
     public void open() {
-        status = "open";
-        System.out.println("Открыли коробку");
+        if (isOpened) {
+            System.out.println("Коробка уже открыта");
+        } else {
+            isOpened = true;
+            System.out.println("Открыли коробку");
+        }
     }
 
     public void close() {
-        status = "close";
-        System.out.println("Закрыли коробку");
+        if (isOpened) {
+            isOpened = false;
+            System.out.println("Закрыли коробку");
+        } else {
+            System.out.println("Коробка уже закрыта");
+        }
     }
 
     public void putThing(String item) {
-        thing = item;
+        if (getThing().isEmpty()) {
+            if (isOpened) {
+                thing = item;
+            } else {
+                open();
+                thing = item;
+            }
+        } else {
+            if (isOpened) {
+                removeThing();
+                thing = item;
+            } else {
+                open();
+                removeThing();
+                thing = item;
+            }
+        }
         System.out.println("В коробку положили " + item);
     }
 
     public void removeThing() {
-        System.out.println("Убрали из коробки " + thing);
-        thing = "";
+        if (getThing().isEmpty()) {
+            System.out.println("Коробка пустая");
+        } else {
+            String removeThing = thing;
+            if (isOpened) {
+                thing = "";
+            } else {
+                open();
+                thing = "";
+            }
+            System.out.println("Убрали из коробки " + removeThing);
+        }
     }
 }
