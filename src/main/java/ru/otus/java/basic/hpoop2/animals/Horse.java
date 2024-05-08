@@ -2,9 +2,10 @@ package ru.otus.java.basic.hpoop2.animals;
 
 public class Horse extends Animal {
     public Horse(String name, int speedRun, int speedSwim, int endurance) {
-        super(name,speedRun,speedSwim,endurance);
+        super(name, speedRun, speedSwim, endurance);
     }
-@Override
+
+    @Override
     public void swim(int distance) {
         info();
         for (int i = 1; i < distance; i++) {
@@ -12,7 +13,7 @@ public class Horse extends Animal {
                 System.out.println("Выносливость: -1");
                 System.out.println("Устал, не проплыл расстояние в " + distance + "м");
                 return;
-            } else{
+            } else {
                 endurance -= 4;
             }
         }

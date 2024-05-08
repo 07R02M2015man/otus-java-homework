@@ -2,7 +2,7 @@ package ru.otus.java.basic.hpoop2.animals;
 
 public class Dog extends Animal {
     public Dog(String name, int speedRun, int speedSwim, int endurance) {
-        super(name,speedRun,speedSwim,endurance);
+        super(name, speedRun, speedSwim, endurance);
     }
 
     @Override
@@ -13,7 +13,7 @@ public class Dog extends Animal {
                 System.out.println("Выносливость: -1");
                 System.out.println("Устал, не проплыл расстояние в " + distance + "м");
                 return;
-            } else{
+            } else {
                 endurance -= 2;
             }
         }

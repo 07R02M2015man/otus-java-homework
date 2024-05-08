@@ -56,7 +56,7 @@ public abstract class Animal {
                 System.out.println("Выносливость: -1");
                 System.out.println("Устал, не пробежал расстояние в " + distance + "м");
                 return;
-            } else{
+            } else {
                 endurance -= 1;
             }
         }
