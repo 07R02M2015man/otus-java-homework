@@ -42,14 +42,22 @@ public abstract class Animal {
         System.out.println(name + " обладает скоростью бега " + speedRun + "м/с, скоростью плавания " + speedSwim + "м/с и выносливостью " + endurance + "ед.");
     }
 
+    public Animal(String name, int speedRun, int speedSwim, int endurance) {
+        this.name = name;
+        this.speedRun = speedRun;
+        this.speedSwim = speedSwim;
+        this.endurance = endurance;
+    }
+
     public void run(int distance) {
         info();
         for (int i = 1; i < distance; i++) {
-            endurance -= 1;
             if (endurance < 0) {
-                System.out.println("Выносливость" + endurance);
-                System.out.println("Появилась усталость, не пробежал расстояние в " + distance + "м");
+                System.out.println("Выносливость: -1");
+                System.out.println("Устал, не пробежал расстояние в " + distance + "м");
                 return;
+            } else{
+                endurance -= 1;
             }
         }
         System.out.println(name + " пробежал расстояние за " + (distance / speedRun) + "сек");
