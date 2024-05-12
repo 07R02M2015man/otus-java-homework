@@ -51,16 +51,16 @@ public abstract class Animal {
 
     public void run(int distance) {
         info();
-        for (int i = 1; i < distance; i++) {
-            if (endurance < 0) {
-                System.out.println("Выносливость: -1");
-                System.out.println("Устал, не пробежал расстояние в " + distance + "м");
-                return;
-            } else {
-                endurance -= 1;
-            }
+        int rez = (endurance -= distance);
+        System.out.println(rez);
+        if (rez < 0) {
+            System.out.println("Устал. Пробежал только " + (distance+rez) + " метров за " + ((distance+rez)/ speedRun)+ " сек");
+            System.out.println("Выносливость: -1");
+            endurance = -1;
+        } else {
+            System.out.println(name + " пробежал расстояние за " + (distance / speedRun) + " сек");
         }
-        System.out.println(name + " пробежал расстояние за " + (distance / speedRun) + "сек");
+
     }
 
     public abstract void swim(int distance);
