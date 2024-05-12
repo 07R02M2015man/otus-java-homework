@@ -8,16 +8,14 @@ public class Horse extends Animal {
     @Override
     public void swim(int distance) {
         info();
-        for (int i = 1; i < distance; i++) {
-            if (endurance < 0) {
-                System.out.println("Выносливость: -1");
-                System.out.println("Устал, не проплыл расстояние в " + distance + "м");
-                return;
-            } else {
-                endurance -= 4;
-            }
+        if ((endurance / 4) < distance) {
+            System.out.println("Устал. Проплыл только " + (endurance / 4) + " из " + distance + " метров  за " + ((endurance / 4) / speedRun) + " сек");
+            endurance = -1;
+            System.out.println("Выносливость: -1");
+        } else {
+            System.out.println(name + " проплыл расстояние за " + (distance / speedSwim) + "сек");
         }
-        System.out.println(name + " проплыл расстояние за " + (distance / speedSwim) + "сек");
+
 
     }
 }
