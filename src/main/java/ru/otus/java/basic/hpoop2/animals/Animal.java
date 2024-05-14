@@ -53,10 +53,11 @@ public abstract class Animal {
         info();
         int rez = (endurance -= distance);
         if (rez < 0) {
-            System.out.println("Устал. Пробежал только " + (distance+rez) + " метров за " + ((distance+rez)/ speedRun)+ " сек");
+            System.out.println("Устал. Пробежал только " + (distance + rez) + " метров за " + ((distance + rez) / speedRun) + " сек");
             System.out.println("Выносливость: -1");
             endurance = -1;
         } else {
+            endurance = rez;
             System.out.println(name + " пробежал расстояние за " + (distance / speedRun) + " сек");
         }
 
