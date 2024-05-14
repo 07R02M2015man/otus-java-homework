@@ -13,6 +13,7 @@ public class Dog extends Animal {
             endurance = -1;
             System.out.println("Выносливость: -1");
         } else {
+            endurance = distance*2;
             System.out.println(name + " проплыл расстояние за " + (distance / speedSwim) + "сек");
         }
 

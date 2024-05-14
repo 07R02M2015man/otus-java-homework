@@ -57,6 +57,7 @@ public abstract class Animal {
             System.out.println("Выносливость: -1");
             endurance = -1;
         } else {
+            endurance = rez;
             System.out.println(name + " пробежал расстояние за " + (distance / speedRun) + " сек");
         }
 
