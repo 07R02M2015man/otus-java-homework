@@ -11,13 +11,14 @@ public class MainApp {
 //        cat1.swim(10);
 
 //        System.out.println();
-//        Dog dog1 = new Dog("Tuzik", 4,3,20);
-////        dog1.run(100);
-//        dog1.swim(10);
+        Dog dog1 = new Dog("Tuzik", 4,3,1000);
+//        dog1.run(100);
+        System.out.println(dog1.swim(1));
+        dog1.info();
 
 //        System.out.println();
-        Horse horse1 = new Horse("Buran", 3, 3, 200);
-        System.out.println(horse1.run(100));
-        System.out.println(horse1.swim(50));
+//        Horse horse1 = new Horse("Buran", 3, 3, 1000);
+//        System.out.println(horse1.run(100));
+//        System.out.println(horse1.swim(1));
     }
 }
