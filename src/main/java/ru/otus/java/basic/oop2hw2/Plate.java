@@ -1,9 +1,8 @@
 package ru.otus.java.basic.oop2hw2;
 
 public class Plate {
-    int maxValue;
-    int currentFood;
-    boolean fullness;
+    private int maxFood;
+    private int currentFood;
 
     public int getCurrentFood() {
         return currentFood;
@@ -13,24 +12,25 @@ public class Plate {
         this.currentFood = currentFood;
     }
 
-    public Plate(int maxValue) {
-        this.maxValue = maxValue;
-        this.currentFood = maxValue;
+    public Plate(int maxFood) {
+        this.maxFood = maxFood;
+        this.currentFood = maxFood;
     }
 
     @Override
     public String toString() {
         return "Plate{" +
-                "maxValue=" + maxValue +
+                "maxValue=" + maxFood +
                 ", currentFood=" + currentFood +
                 '}';
     }
 
     public int addFood(int amountFood) {
         currentFood += amountFood;
-        if (currentFood > maxValue) {
-            currentFood = maxValue;
+        if (currentFood > maxFood) {
+            currentFood = maxFood;
         }
+        System.out.print("currentFood: ");
         return currentFood;
     }
 

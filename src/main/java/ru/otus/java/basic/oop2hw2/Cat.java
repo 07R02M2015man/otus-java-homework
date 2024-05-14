@@ -1,19 +1,19 @@
 package ru.otus.java.basic.oop2hw2;
 
 public class Cat {
-    String name;
-    int appetite;
-    Boolean wellfed;
+    private String name;
+    private int appetite;
+    private Boolean wellfed;
 
     public String getName() {
         return name;
     }
 
-    public Boolean getFullness() {
+    public Boolean getWellfed() {
         return wellfed;
     }
 
-    public void setFullness(Boolean wellfed) {
+    public void setWellfed(Boolean wellfed) {
         this.wellfed = wellfed;
     }
 
@@ -24,13 +24,16 @@ public class Cat {
         this.wellfed = false;
     }
 
-    public void eatFood(Plate plate) {
-        if (!wellfed && plate.reduceFood(appetite)) {
+    public boolean eat(Plate plate) {
+        if (wellfed) {
+            System.out.print(name + " сытый. ");
+        } else if (plate.reduceFood(appetite)) {
             wellfed = true;
-            System.out.println(name + " сытый");
+            System.out.print(name + "  поел. ");
         } else {
-            wellfed = false;
-            System.out.println(name + " голодный");
+            System.out.print(name + " голодный. Не хватило еды. ");
         }
+        System.out.print("Сытость: ");
+        return wellfed;
     }
 }
