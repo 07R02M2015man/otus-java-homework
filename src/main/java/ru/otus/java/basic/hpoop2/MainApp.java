@@ -16,8 +16,8 @@ public class MainApp {
 //        dog1.swim(10);
 
 //        System.out.println();
-        Horse horse1 = new Horse("Buran", 4,3,20);
-//        horse1.run(100);
-        horse1.swim(50);
+        Horse horse1 = new Horse("Buran", 3, 3, 200);
+        System.out.println(horse1.run(100));
+        System.out.println(horse1.swim(50));
     }
 }

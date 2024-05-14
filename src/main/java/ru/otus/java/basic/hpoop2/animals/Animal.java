@@ -1,5 +1,7 @@
 package ru.otus.java.basic.hpoop2.animals;
 
+import java.text.DecimalFormat;
+
 public abstract class Animal {
     String name;
     int speedRun;
@@ -49,20 +51,24 @@ public abstract class Animal {
         this.endurance = endurance;
     }
 
-    public void run(int distance) {
+    public int run(int distance) {
         info();
         int rez = (endurance -= distance);
+        int time;
         if (rez < 0) {
-            System.out.println("Устал. Пробежал только " + (distance+rez) + " метров за " + ((distance+rez)/ speedRun)+ " сек");
+            time = (distance + rez) / speedRun;
+            System.out.println("Устал. Пробежал только " + (distance + rez) + " метров");
             System.out.println("Выносливость: -1");
             endurance = -1;
         } else {
             endurance = rez;
-            System.out.println(name + " пробежал расстояние за " + (distance / speedRun) + " сек");
+            time = distance / speedRun;
+            System.out.println(name + " пробежал все расстояние!");
         }
-
+        System.out.print("Время: ");
+        return time;
     }
 
-    public abstract void swim(int distance);
+    public abstract int swim(int distance);
 
 }
