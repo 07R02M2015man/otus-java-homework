@@ -13,7 +13,7 @@ public class Horse extends Animal {
             endurance = -1;
             System.out.println("Выносливость: -1");
         } else {
-            endurance = distance*4;
+            endurance = endurance - (distance * 4);
             System.out.println(name + " проплыл расстояние за " + (distance / speedSwim) + "сек");
         }
 
