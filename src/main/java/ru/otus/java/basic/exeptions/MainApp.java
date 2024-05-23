@@ -1,7 +1,5 @@
 package ru.otus.java.basic.exeptions;
 
-import static java.lang.Integer.parseInt;
-
 public class MainApp {
     public static void main(String[] args) throws AppArraySizeException {
         String[][] arr1 = {{"1", "-2", "4", "5" }, {"1", "1", "4", "6" }, {"9", "1", "4", "-20" }, {"8", "12", "-3", "33" }};
