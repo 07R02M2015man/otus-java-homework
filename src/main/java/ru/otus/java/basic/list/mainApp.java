@@ -65,7 +65,6 @@ public class mainApp {
         return nameWorkers;
     }
 
-    //метод, увеличивающий каждый элемент списка на указанное число
     private static List<Integer> increaseList(int num, List<Integer> list1) {
         for (int i = 0; i < list1.size(); i++) {
             list1.set(i, list1.get(i) + num);
@@ -73,8 +72,6 @@ public class mainApp {
         return list1;
     }
 
-    //метод, принимающий в качестве аргументов целое число и ссылку на список, метод должен
-    //переписать каждую заполненную ячейку списка указанным числом
     private static List<Integer> rewriteList(int num, List<Integer> list1) {
         for (int i = 0; i < list1.size(); i++) {
             if (list1.get(i) != 0) {
