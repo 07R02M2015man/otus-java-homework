@@ -1,7 +1,5 @@
 package ru.otus.java.basic.map;
 
-import java.util.*;
-
 public class mainApp {
     public static void main(String[] args) {
         PhoneBook phoneBook = new PhoneBook();
