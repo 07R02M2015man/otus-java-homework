@@ -15,14 +15,13 @@ public class CalculatorClient {
 
             System.out.println("Введите выражения для вычисления в формате 'число операция число': ");
             String expression = scanner.nextLine();
-
             output.println(expression);
-
             String result = input.readLine();
             System.out.println(result);
 
         } catch (IOException e) {
-            System.out.println("Ошибка клиента (возможно пропущены пробелы): " + e.getMessage());
+            System.out.println("Ошибка клиента (возможно пропущены пробелы, проверьте): " + e.getMessage());
+
         }
     }
 }
