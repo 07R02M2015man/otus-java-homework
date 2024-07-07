@@ -34,11 +34,11 @@ public class Box<T extends Fruit> {
 
 
     public boolean compare(Box<?> otherBox) {
-        return Math.abs(this.getWeight() - otherBox.getWeight()) <= 0;
+        return Math.abs(this.getWeight() - otherBox.getWeight()) <= 0.001;
     }
 
 
-    public void transferFruits(Box<T> targetBox) {
+    public void transferFruits(Box<? super T> targetBox) {
         if (fruits.isEmpty()) {
             System.out.println("Исходная коробка пустая");
             return;

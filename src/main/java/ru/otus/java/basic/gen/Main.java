@@ -28,7 +28,10 @@ public class Main {
 
         //пересыпание всех фруктов
         Box<Apple> newAppleBox = new Box<>(10000);
-        appleBox.transferFruits(newAppleBox);
+        appleBox.transferFruits(fruitBox);
+//        fruitBox.transferFruits(appleBox);
+        //appleBox.transferFruits(newAppleBox);
+
 
         //пересыавние определенного количества фруктов
         appleBox.relocateFruits(fruitBox, 1);
